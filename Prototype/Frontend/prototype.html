@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vehicle Recognition Application | Turners Car Insurance</title>
+
+        <link rel="stylesheet" href="prototype.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="prototype.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="site-header">
+            <!-- Top Navigation -->
+            <nav class="header-top-menu" aria-label="Site categories">
+                <a href="https://www.turners.co.nz/Cars/">Cars</a>
+                <a href="https://www.turners.co.nz/Trucks-Machinery/">
+                    Trucks &amp; Machinery
+                </a>
+                <a href="https://www.turners.co.nz/Damaged-Vehicles/">
+                    Damaged &amp; End of Life
+                </a>
+                <a href="https://www.turners.co.nz/Motorcycles/">
+                    Motorcycles
+                </a>
+                <a href="https://www.turners.co.nz/General-Goods/">
+                    General Goods
+                </a>
+                <a href="https://www.turners.co.nz/Buses-Caravans/">
+                    Buses, Caravans &amp; Motorhomes
+                </a>
+                <a href="https://www.turners.co.nz/Boats-Marine/">
+                    Boats &amp; Marine
+                </a>
+            </nav>
+
+            <!-- Main Header -->
+            <div class="header-container">
+                <a href="https://www.turners.co.nz/Cars/" class="logo">
+                    <img
+                        src="https://content.tgstatic.co.nz/webassets/contentassets/3e15c8546917474ca0a150b18e9fd64e/turnerscars_logo_1line_horz_true-rgb-desktop.png"
+                        alt="Turners Cars"
+                    />
+                </a>
+
+                <!-- Account and Contact Links -->
+                <nav class="header-actions" aria-label="Account and contact">
+                    <a href="https://www.turners.co.nz/" class="login-link">
+                        <span class="header-icon" aria-hidden="true">♟</span>
+                        <strong>LOGIN</strong> OR <strong>REGISTER</strong>
+                    </a>
+
+                    <a href="tel:0800887637" class="phone-link">
+                        <span class="header-icon" aria-hidden="true">☎</span>
+                        0800 887 637
+                    </a>
+
+                    <a href="https://www.turners.co.nz/" class="find-us-link">
+                        <span class="header-icon" aria-hidden="true">●</span>
+                        Find Us
+                    </a>
+
+                    <a href="https://www.turners.co.nz/" class="language-link">
+                        中文
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav" aria-label="Main site navigation">
+            <div class="main-nav-container">
+                <div class="main-nav-left">
+                    <a href="https://www.turners.co.nz/Cars/">
+                        <span aria-hidden="true">🔍︎</span> Find a Car
+                    </a>
+
+                    <a href="https://www.turners.co.nz/Cars/">
+                        How to Buy
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+
+                    <a href="https://www.turners.co.nz/Cars/">
+                        Sell your Car
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+
+                    <a
+                        href="https://www.turners.co.nz/Cars/finance-insurance/car-insurance/"
+                    >
+                        Finance &amp; Insurance
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+
+                    <a href="https://www.turners.co.nz/Cars/">
+                        Mobile Servicing
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div class="main-nav-right">
+                    <a href="https://www.turners.co.nz/Cars/">
+                        Auctions
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+
+                    <a href="https://www.turners.co.nz/Cars/">
+                        More Info
+                        <span class="nav-arrow" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-container">
+            <div class="breadcrumb">
+                Finance &amp; Insurance / Vehicle Recognition
+            </div>
+
+            <section class="intro">
+                <p class="section-label">TURNERS CAR INSURANCE</p>
+                <h1>Identify Your Vehicle</h1>
+                <p>
+                    Upload a photo of your vehicle and let our AI identify its
+                    type.
+                </p>
+                <p>
+                    <i
+                        >For the best results, upload a clear photograph showing
+                        the entire vehicle, including its front and side. Avoid
+                        extreme camera angles or images where the vehicle is
+                        partially obscured.</i
+                    >
+                </p>
+            </section>
+
+            <!-- Image Upload -->
+            <section class="card upload-section">
+                <div class="section-heading">
+                    <span class="step-number">1</span>
+                    <h2>Upload a Vehicle Photo</h2>
+                </div>
+
+                <form id="vehicle-form">
+                    <label for="vehicle-image" class="upload-area">
+                        <span class="upload-icon" aria-hidden="true">↑</span>
+                        <span class="upload-text">Choose an Image</span>
+                        <span class="upload-hint">
+                            JPG, PNG or WebP - Maximum 10MB
+                        </span>
+                    </label>
+
+                    <input
+                        type="file"
+                        id="vehicle-image"
+                        name="vehicle-image"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                        required
+                    />
+
+                    <div
+                        id="image-preview-container"
+                        class="image-preview"
+                        hidden
+                    >
+                        <img
+                            id="image-preview"
+                            src=""
+                            alt="Selected vehicle photograph"
+                        />
+                        <p id="file-name"></p>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Identify Vehicle Type
+                    </button>
+                </form>
+            </section>
+
+            <!-- Recognition Result -->
+            <section class="card result-section">
+                <div class="section-heading">
+                    <span class="step-number">2</span>
+                    <h2>Recognition Result</h2>
+                </div>
+
+                <div id="recognition-result" class="result-placeholder">
+                    <p>No vehicle analysed yet.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>
+                This is a prototype built for an assignment for demonstration
+                purposes only.
+            </p>
+            <p>Not affiliated with or endorsed by Turners.</p>
+        </footer>
+    </body>
+</html>
